@@ -590,6 +590,7 @@ defmodule Elixlsx.XMLTemplates do
 
     numfmtid = case style.numfmt do
       nil -> 0
+      %{format: "# ##0"} -> 1
       %{format: "# ##0.00"} -> 4
       f -> NumFmtDB.get_id wci.numfmtdb, f
     end
